@@ -3,898 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सुप्रिया डिजिटल रीच आर्क | एडमिन पैनल के साथ</title>
-    <!-- फॉन्ट अवेसम, गूगल फॉन्ट, स्टाइल -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Supriya AI - Suraj की Full Gemini Power ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        /* वही स्टाइल जो पहले दिए थे + कुछ नए स्टाइल */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f4f7fc;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            padding: 20px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .hero {
-            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #ff6b6b;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            margin: 5px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .services {
-            padding: 60px 0;
-            background: #fff;
-        }
-
-        .services h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            color: #333;
-            position: relative;
-        }
-
-        .services h2:after {
-            content: '';
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: block;
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: #f9f9f9;
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .service-card i {
-            font-size: 3rem;
-            color: #667eea;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .service-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* फॉर्म सेक्शन */
-        .apply {
-            background: #fff;
-            padding: 60px 0;
-        }
-
-        .apply h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            color: #333;
-        }
-
-        .apply-form {
-            max-width: 600px;
-            margin: auto;
-            background: #f9f9f9;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
-        }
-
-        .btn-submit {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-submit:hover {
-            opacity: 0.9;
-        }
-
-        /* एडमिन पैनल */
-        .admin-panel {
-            background: #f0f2f5;
-            min-height: 100vh;
-            padding: 60px 0;
-        }
-
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .admin-header h2 {
-            font-size: 2rem;
-        }
-
-        .btn-logout {
-            background: #dc3545;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .app-card {
-            background: #fff;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
-            border-left: 5px solid #667eea;
-        }
-
-        .app-card.completed {
-            border-left-color: #28a745;
-            opacity: 0.8;
-        }
-
-        .app-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .app-card p {
-            margin: 8px 0;
-            color: #555;
-        }
-
-        .app-card .label {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .app-actions {
-            margin-top: 15px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .app-actions button {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-
-        .btn-complete {
-            background: #28a745;
-            color: #fff;
-        }
-
-        .btn-incomplete {
-            background: #ffc107;
-            color: #333;
-        }
-
-        .btn-delete {
-            background: #dc3545;
-            color: #fff;
-        }
-
-        /* लॉगिन मोडल */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .modal-content h3 {
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-
-        .modal-content .btn-google {
-            background: #db4437;
-            color: #fff;
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .modal-content .btn-google i {
-            font-size: 1.2rem;
-        }
-
-        .modal-content .close {
-            float: right;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* हाइडेन एडमिन लिंक */
-        #admin-link {
-            cursor: pointer;
-        }
-
-        footer {
-            background: #222;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #ff6b6b;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul {
-                margin-top: 15px;
-                justify-content: center;
-            }
-
-            nav ul li {
-                margin: 5px 10px;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-        }
+        body { font-family: 'Poppins', sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #6b46c1, #ff00cc); }
+        .chat-window { position: fixed; bottom: 100px; right: 20px; width: 410px; height: 620px; 
+                       background: #0f172a; border-radius: 28px; box-shadow: 0 30px 70px rgba(0,0,0,0.8); 
+                       display: none; flex-direction: column; z-index: 9999; overflow: hidden; }
+        .message { max-width: 88%; padding: 14px 20px; border-radius: 20px; line-height: 1.5; }
+        .user { align-self: flex-end; background: #c026d3; color: white; }
+        .ai { align-self: flex-start; background: #1e2937; color: white; }
+        .image-preview { max-width: 200px; border-radius: 12px; margin-top: 8px; }
     </style>
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>सुप्रिया डिजिटल रीच आर्क</h1>
-                <p>Supriya Digital Reach Arch</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">होम</a></li>
-                    <li><a href="#services">सेवाएँ</a></li>
-                    <li><a href="#apply">ऑर्डर करें</a></li>
-                    <li><a href="#contact">संपर्क</a></li>
-                    <li><a id="admin-link">एडमिन</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body class="bg-gray-950 text-white">
 
-    <!-- होम सेक्शन -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>आपकी डिजिटल जरूरतों का एक ही हल</h2>
-            <p>वेबसाइट, लोगो, पोस्टर, यूट्यूब वीडियो, स्कूल एडमिशन वीडियो, कार्टून, 3D इमेज, गाने और भी बहुत कुछ | एक कॉल पर हम हैं आपके साथ</p>
-            <a href="tel:+919792006815" class="btn"><i class="fas fa-phone-alt"></i> अभी कॉल करें</a>
-            <a href="https://wa.me/919792006815?text=नमस्ते! मुझे आपकी सेवाओं के बारे में जानकारी चाहिए।" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> व्हाट्सएप करें</a>
+    <!-- Navbar -->
+    <nav class="bg-black/90 backdrop-blur fixed w-full z-50 py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-brain text-4xl text-purple-400"></i>
+                <h1 class="text-3xl font-bold">Supriya AI</h1>
+            </div>
+            <button onclick="toggleChat()" class="bg-white text-black px-8 py-3 rounded-3xl font-bold flex items-center gap-3 hover:scale-105">
+                <i class="fa-solid fa-robot"></i> चैट शुरू करो
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <h2 class="text-6xl font-bold leading-tight">नमस्ते Suraj! ❤️<br>मैं <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">Supriya AI</span> हूँ</h2>
+                <p class="text-2xl">Full Gemini Power — Text + Image Analysis + Code + Jokes + सब कुछ!</p>
+                <button onclick="toggleChat()" class="bg-white text-black text-xl px-12 py-6 rounded-3xl font-bold hover:scale-110">Supriya से बात करो →</button>
+            </div>
+            <img src="https://picsum.photos/id/1011/600/700" class="rounded-3xl shadow-2xl" alt="Supriya">
         </div>
     </section>
 
-    <!-- सेवाएँ सेक्शन -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>हमारी सेवाएँ | Our Services</h2>
-            <div class="service-grid">
-                <!-- वही सेवा कार्ड -->
-                <div class="service-card"><i class="fas fa-laptop-code"></i><h3>वेबसाइट डिजाइन</h3><p>स्कूल, कॉलेज, रेस्टोरेंट, बिजनेस के लिए आकर्षक और प्रोफेशनल वेबसाइट</p></div>
-                <div class="service-card"><i class="fas fa-paint-brush"></i><h3>लोगो डिजाइन</h3><p>आपके ब्रांड की पहचान के लिए यूनिक लोगो</p></div>
-                <div class="service-card"><i class="fas fa-palette"></i><h3>पोस्टर डिजाइन</h3><p>प्रमोशनल पोस्टर, सोशल मीडिया पोस्ट, बैनर</p></div>
-                <div class="service-card"><i class="fab fa-youtube"></i><h3>यूट्यूब वीडियो</h3><p>चैनल के लिए इंट्रो, आउट्रो, वीडियो एडिटिंग, स्कूल एडमिशन वीडियो</p></div>
-                <div class="service-card"><i class="fas fa-video"></i><h3>एडमिशन वीडियो</h3><p>स्कूल/कॉलेज एडमिशन के लिए प्रमोशनल वीडियो</p></div>
-                <div class="service-card"><i class="fas fa-dragon"></i><h3>कार्टून / एनिमेशन</h3><p>2D/3D कार्टून कैरेक्टर, एनिमेटेड वीडियो</p></div>
-                <div class="service-card"><i class="fas fa-cubes"></i><h3>3D इमेज / मॉडल</h3><p>प्रोडक्ट डिजाइन, आर्किटेक्चरल रेंडर, 3D आर्ट</p></div>
-                <div class="service-card"><i class="fas fa-music"></i><h3>गाने / ऑडियो</h3><p>नाम के गाने, जिंगल, बैकग्राउंड म्यूजिक</p></div>
-                <div class="service-card"><i class="fas fa-lightbulb"></i><h3>यूट्यूब सुझाव</h3><p>चैनल ग्रोथ, वीडियो आइडिया, SEO सलाह</p></div>
-                <div class="service-card"><i class="fas fa-camera-retro"></i><h3>कस्टम डिजाइन</h3><p>जो भी आप चाहें, हम बना देंगे</p></div>
+    <!-- Features -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h3 class="text-5xl font-bold mb-12">Gemini की सारी ताकत अब Supriya में</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-3xl">💬 Text Chat (Hinglish + Hindi)</div>
+                <div class="bg-gray-800 p-8 rounded-3xl">📸 Image Analysis (photo upload करो)</div>
+                <div class="bg-gray-800 p-8 rounded-3xl">💻 Code, Jokes, Ideas, Translation सब!</div>
             </div>
         </div>
     </section>
 
-    <!-- ऑर्डर फॉर्म सेक्शन -->
-    <section id="apply" class="apply">
-        <div class="container">
-            <h2>ऑर्डर करें | Apply Now</h2>
-            <div class="apply-form">
-                <form id="applicationForm">
-                    <div class="form-group">
-                        <label for="name">आपका नाम *</label>
-                        <input type="text" id="name" name="name" required placeholder="उदा. राहुल कुमार">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">ईमेल *</label>
-                        <input type="email" id="email" name="email" required placeholder="example@gmail.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">मोबाइल नंबर *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="9876543210">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">कौन सी सेवा चाहिए? *</label>
-                        <select id="service" name="service" required>
-                            <option value="">-- चुनें --</option>
-                            <option>वेबसाइट डिजाइन</option>
-                            <option>लोगो डिजाइन</option>
-                            <option>पोस्टर डिजाइन</option>
-                            <option>यूट्यूब वीडियो</option>
-                            <option>स्कूल एडमिशन वीडियो</option>
-                            <option>कार्टून / एनिमेशन</option>
-                            <option>3D इमेज</option>
-                            <option>गाने / ऑडियो</option>
-                            <option>यूट्यूब सुझाव</option>
-                            <option>कस्टम डिजाइन</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="details">विस्तार से बताएं क्या बनवाना है *</label>
-                        <textarea id="details" name="details" required placeholder="कृपया पूरी जानकारी दें..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">सबमिट करें</button>
-                </form>
-                <div id="formMessage" style="margin-top: 20px; text-align: center;"></div>
-            </div>
+    <!-- Social -->
+    <section class="py-12 bg-black text-center">
+        <h3 class="text-4xl font-bold mb-8">Follow करो</h3>
+        <div class="flex justify-center gap-12 text-6xl">
+            <a href="https://youtube.com/@5tarsuraj" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/suraj.5tar" target="_blank" class="hover:text-pink-500 transition"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </section>
 
-    <!-- संपर्क सेक्शन -->
-    <section id="contact" class="contact" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:#fff; padding:60px 0;">
-        <div class="container">
-            <h2>संपर्क करें | Contact Us</h2>
-            <div class="contact-info" style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-bottom:30px;">
-                <div style="background: rgba(255,255,255,0.1); padding:20px; border-radius:15px; min-width:250px;">
-                    <i class="fas fa-mobile-alt" style="font-size:2.5rem; margin-bottom:15px; display:block;"></i>
-                    <a href="tel:+919792006815" style="font-size:2rem; font-weight:700; color:#fff; text-decoration:none;">9792006815</a>
-                    <p>कॉल करें, 24x7 उपलब्ध</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding:20px; border-radius:15px; min-width:250px;">
-                    <i class="fab fa-whatsapp" style="font-size:2.5rem; margin-bottom:15px; display:block;"></i>
-                    <a href="https://wa.me/919792006815" style="font-size:2rem; font-weight:700; color:#fff; text-decoration:none;" target="_blank">व्हाट्सएप</a>
-                    <p>तुरंत संदेश भेजें</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding:20px; border-radius:15px; min-width:250px;">
-                    <i class="fas fa-envelope" style="font-size:2.5rem; margin-bottom:15px; display:block;"></i>
-                    <a href="mailto:suraj359010@gmail.com" style="font-size:2rem; font-weight:700; color:#fff; text-decoration:none;">suraj359010@gmail.com</a>
-                    <p>ईमेल भी कर सकते हैं</p>
+    <!-- Chat Window -->
+    <div id="chat-window" class="chat-window">
+        <div class="p-6 bg-gray-800 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center text-3xl">🧠</div>
+                <div>
+                    <h3 class="text-xl font-bold">Supriya AI (Gemini)</h3>
+                    <p class="text-green-400 text-sm">● Full Power On</p>
                 </div>
             </div>
-            <p style="font-size:1.2rem;">वेबसाइट : www.supriyadigitalreacharch.in (जल्द आ रहा है)</p>
+            <button onclick="toggleChat()" class="text-3xl">✕</button>
         </div>
-    </section>
+        
+        <div id="chat-messages" class="flex-1 p-6 overflow-y-auto bg-gray-950 space-y-6"></div>
+        
+        <div class="p-5 bg-gray-800 border-t">
+            <!-- Image Preview -->
+            <div id="image-preview-area" class="hidden mb-3 flex items-center gap-3"></div>
+            
+            <div class="flex gap-3">
+                <button onclick="document.getElementById('image-upload').click()" 
+                        class="bg-gray-700 hover:bg-gray-600 w-12 h-12 rounded-3xl text-2xl flex items-center justify-center">
+                    📸
+                </button>
+                <input type="file" id="image-upload" accept="image/*" hidden onchange="handleImageUpload(event)">
+                
+                <input id="user-input" type="text" placeholder="Supriya से पूछो या photo describe करो..." 
+                       class="flex-1 bg-gray-700 p-5 rounded-3xl text-white focus:outline-none focus:ring-4 focus:ring-purple-500"
+                       onkeypress="if(event.key==='Enter') sendMessage()">
+                
+                <button onclick="sendMessage()" class="bg-purple-600 w-14 h-14 rounded-3xl text-2xl">↑</button>
+            </div>
+            <p class="text-xs text-center text-gray-500 mt-2">Gemini 1.5 Flash • Image Analysis Supported</p>
+        </div>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 सुप्रिया डिजिटल रीच आर्क | सर्वाधिकार सुरक्षित | Designed with ❤️ for आपकी डिजिटल जरूरतें</p>
-            <p>गूगल पर सर्च करें: <strong>wwwsupriyadigitalreacharch.in</strong> | मोबाइल: 9792006815 | एडमिन: सूरज मौर्या</p>
-        </div>
+    <!-- Footer -->
+    <footer class="bg-black py-10 text-center">
+        <p class="text-purple-400 text-xl">Made with ❤️ for Suraj • Full Gemini Power</p>
+        <p class="text-sm text-gray-500 mt-2">Kanpur, Uttar Pradesh • 2026</p>
     </footer>
 
-    <!-- एडमिन लॉगिन मोडल -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
-            <h3>एडमिन लॉगिन</h3>
-            <p>केवल एडमिन (सूरज मौर्या) के लिए</p>
-            <button id="googleLoginBtn" class="btn-google"><i class="fab fa-google"></i> Gmail से लॉगिन करें</button>
-        </div>
-    </div>
+<script>
+// =============== FULL GEMINI API (Text + Image) ===============
+const API_KEY = "Paste_your_full_key_here";   // ←←← यहीं FULL KEY पेस्ट करो
 
-    <!-- एडमिन पैनल (छिपा हुआ, केवल लॉगिन के बाद दिखेगा) -->
-    <div id="adminPanel" style="display: none;">
-        <section class="admin-panel">
-            <div class="container">
-                <div class="admin-header">
-                    <h2>एडमिन डैशबोर्ड - सभी एप्लीकेशन</h2>
-                    <button id="logoutBtn" class="btn-logout">लॉगआउट</button>
-                </div>
-                <div id="appsList" class="apps-grid">
-                    <!-- यहाँ Firestore से डेटा आएगा -->
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+
+let chatHistory = [
+    { role: "user", parts: [{ text: "तुम Supriya AI हो। Suraj की personal friendly AI हो जो Gemini की पूरी ताकत इस्तेमाल करती है। Text + Image analysis दोनों कर सकती हो। हमेशा हिंदी/Hinglish में प्यार से जवाब देना।" }] },
+    { role: "model", parts: [{ text: "अरे Suraj भाई! 🔥 Supriya आ गई Full Gemini Power के साथ! Photo upload करो या कुछ भी पूछो 😍" }] }
+];
+
+let currentImageBase64 = null;
+let currentMimeType = null;
+
+function toggleChat() {
+    const win = document.getElementById("chat-window");
+    win.style.display = win.style.display === "flex" ? "none" : "flex";
+}
+
+function handleImageUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+        currentImageBase64 = ev.target.result.split(',')[1];
+        currentMimeType = file.type;
+        
+        // Show preview
+        const previewArea = document.getElementById("image-preview-area");
+        previewArea.innerHTML = `
+            <div class="flex items-center gap-3 bg-gray-700 p-3 rounded-2xl">
+                <img src="${ev.target.result}" class="image-preview">
+                <div>
+                    <p class="text-sm">Photo attached</p>
+                    <button onclick="removeImage()" class="text-red-400 text-xs">Remove</button>
                 </div>
             </div>
-        </section>
-    </div>
+        `;
+        previewArea.classList.remove("hidden");
+    };
+    reader.readAsDataURL(file);
+}
 
-    <!-- व्हाट्सएप फ्लोटिंग बटन -->
-    <a href="https://wa.me/919792006815" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; text-align:center; font-size:30px; line-height:60px; box-shadow:2px 2px 10px rgba(0,0,0,0.2); z-index:100;" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+function removeImage() {
+    currentImageBase64 = null;
+    document.getElementById("image-preview-area").classList.add("hidden");
+    document.getElementById("image-preview-area").innerHTML = "";
+}
 
-    <script>
-        // Firebase कॉन्फ़िगरेशन - इसे आपको अपने Firebase प्रोजेक्ट से बदलना होगा
-        const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
+async function sendMessage() {
+    const input = document.getElementById("user-input");
+    const msg = input.value.trim();
+    if (!msg && !currentImageBase64) return;
+    if (API_KEY === "Paste_your_full_key_here") {
+        alert("Bhai pehle API key paste kar do! 😅");
+        return;
+    }
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-        const auth = firebase.auth();
+    // User message
+    addUserMessage(msg || "Photo describe karo", currentImageBase64);
 
-        // एडमिन ईमेल (सिर्फ यही ईमेल एडमिन पैनल देख सकेगा)
-        const ADMIN_EMAIL = "suraj359010@gmail.com";
+    const userText = msg || "इस फोटो के बारे में बताओ";
+    const typingId = addTyping();
 
-        // DOM एलिमेंट्स
-        const adminLink = document.getElementById('admin-link');
-        const loginModal = document.getElementById('loginModal');
-        const adminPanel = document.getElementById('adminPanel');
-        const googleLoginBtn = document.getElementById('googleLoginBtn');
-        const logoutBtn = document.getElementById('logoutBtn');
-        const appsList = document.getElementById('appsList');
-        const form = document.getElementById('applicationForm');
-        const formMessage = document.getElementById('formMessage');
+    input.value = "";
+    const tempImage = currentImageBase64;
+    const tempMime = currentMimeType;
+    removeImage();
 
-        // एडमिन लिंक पर क्लिक करने पर मोडल खोलें
-        adminLink.addEventListener('click', () => {
-            loginModal.style.display = 'flex';
-        });
-
-        // मोडल बंद करें
-        document.querySelector('.close').addEventListener('click', () => {
-            loginModal.style.display = 'none';
-        });
-
-        // Google लॉगिन
-        googleLoginBtn.addEventListener('click', () => {
-            const provider = new firebase.auth.GoogleAuthProvider();
-            auth.signInWithPopup(provider)
-                .then((result) => {
-                    const user = result.user;
-                    if (user.email === ADMIN_EMAIL) {
-                        loginModal.style.display = 'none';
-                        adminPanel.style.display = 'block';
-                        loadApplications();
-                        // मेन कंटेंट छुपाएँ (वैकल्पिक)
-                        document.querySelector('header').style.display = 'none';
-                        document.querySelector('#home').style.display = 'none';
-                        document.querySelector('#services').style.display = 'none';
-                        document.querySelector('#apply').style.display = 'none';
-                        document.querySelector('#contact').style.display = 'none';
-                        document.querySelector('footer').style.display = 'none';
-                    } else {
-                        alert('आप एडमिन नहीं हैं। केवल suraj359010@gmail.com ही लॉगिन कर सकता है।');
-                        auth.signOut();
-                    }
-                })
-                .catch((error) => {
-                    console.error('Login error:', error);
-                    alert('लॉगिन में त्रुटि: ' + error.message);
-                });
-        });
-
-        // लॉगआउट
-        logoutBtn.addEventListener('click', () => {
-            auth.signOut().then(() => {
-                adminPanel.style.display = 'none';
-                // सभी सेक्शन वापस दिखाएँ
-                document.querySelector('header').style.display = 'block';
-                document.querySelector('#home').style.display = 'block';
-                document.querySelector('#services').style.display = 'block';
-                document.querySelector('#apply').style.display = 'block';
-                document.querySelector('#contact').style.display = 'block';
-                document.querySelector('footer').style.display = 'block';
-            });
-        });
-
-        // फॉर्म सबमिट - Firestore में डेटा सेव करें
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const details = document.getElementById('details').value;
-
-            db.collection('applications').add({
-                name,
-                email,
-                phone,
-                service,
-                details,
-                status: 'incomplete', // डिफॉल्ट स्थिति
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            })
-            .then(() => {
-                formMessage.innerHTML = '<p style="color:green;">आपका आवेदन सफलतापूर्वक भेजा गया! जल्द ही संपर्क करेंगे।</p>';
-                form.reset();
-            })
-            .catch((error) => {
-                formMessage.innerHTML = '<p style="color:red;">त्रुटि: ' + error.message + '</p>';
-            });
-        });
-
-        // एडमिन के लिए सभी एप्लीकेशन लोड करें
-        function loadApplications() {
-            db.collection('applications').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
-                appsList.innerHTML = '';
-                snapshot.forEach((doc) => {
-                    const app = doc.data();
-                    const appId = doc.id;
-                    const card = document.createElement('div');
-                    card.className = `app-card ${app.status === 'complete' ? 'completed' : ''}`;
-                    card.innerHTML = `
-                        <h3>${app.name}</h3>
-                        <p><span class="label">ईमेल:</span> ${app.email}</p>
-                        <p><span class="label">फोन:</span> ${app.phone}</p>
-                        <p><span class="label">सेवा:</span> ${app.service}</p>
-                        <p><span class="label">विवरण:</span> ${app.details}</p>
-                        <p><span class="label">स्थिति:</span> ${app.status === 'complete' ? 'पूरा हुआ' : 'अधूरा'}</p>
-                        <p><span class="label">समय:</span> ${app.timestamp ? new Date(app.timestamp.toDate()).toLocaleString() : 'अभी'}</p>
-                        <div class="app-actions">
-                            <button class="btn-complete" onclick="updateStatus('${appId}', 'complete')">पूरा हुआ</button>
-                            <button class="btn-incomplete" onclick="updateStatus('${appId}', 'incomplete')">अधूरा</button>
-                            <button class="btn-delete" onclick="deleteApp('${appId}')">डिलीट</button>
-                        </div>
-                    `;
-                    appsList.appendChild(card);
-                });
-            });
+    try {
+        let parts = [{ text: userText }];
+        if (tempImage) {
+            parts.push({ inline_data: { mime_type: tempMime, data: tempImage } });
         }
 
-        // स्टेटस अपडेट फंक्शन (ग्लोबल बनाने के लिए window पर अटैच करें)
-        window.updateStatus = (id, status) => {
-            db.collection('applications').doc(id).update({ status })
-                .catch(error => alert('Error updating status: ' + error.message));
-        };
+        chatHistory.push({ role: "user", parts: parts });
 
-        window.deleteApp = (id) => {
-            if (confirm('क्या आप सच में इस एप्लीकेशन को डिलीट करना चाहते हैं?')) {
-                db.collection('applications').doc(id).delete()
-                    .catch(error => alert('Error deleting: ' + error.message));
-            }
-        };
-
-        // अगर पहले से लॉगिन है तो सीधे एडमिन पैनल दिखाएँ (पेज रिफ्रेश के बाद)
-        auth.onAuthStateChanged((user) => {
-            if (user && user.email === ADMIN_EMAIL) {
-                adminPanel.style.display = 'block';
-                loginModal.style.display = 'none';
-                loadApplications();
-                // मेन कंटेंट छुपाएँ
-                document.querySelector('header').style.display = 'none';
-                document.querySelector('#home').style.display = 'none';
-                document.querySelector('#services').style.display = 'none';
-                document.querySelector('#apply').style.display = 'none';
-                document.querySelector('#contact').style.display = 'none';
-                document.querySelector('footer').style.display = 'none';
-            } else if (user) {
-                // अगर दूसरे ईमेल से लॉगिन है तो लॉगआउट कर दें
-                auth.signOut();
-            }
+        const res = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ contents: chatHistory })
         });
-    </script>
-</body>
-</html>    <a href="https://wa.me/919792006815" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; width:60px; height:60px; border-radius:50px; text-align:center; font-size:30px; box-shadow: 2px 2px 3px #999; z-index:1000; display:flex; align-items:center; justify-content:center;" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
-    <script>
-      // Firebase Logic यहाँ आएगी (Initialize App, Firestore functions, etc.)
-    </script>
+        const data = await res.json();
+        const reply = data.candidates[0].content.parts[0].text;
+
+        removeTyping(typingId);
+        addMessage(reply, "ai");
+        chatHistory.push({ role: "model", parts: [{ text: reply }] });
+
+    } catch(e) {
+        removeTyping(typingId);
+        addMessage("Internet या key check कर लो भाई 😓", "ai");
+    }
+}
+
+function addUserMessage(text, imageBase64) {
+    const container = document.getElementById("chat-messages");
+    const div = document.createElement("div");
+    div.className = "message user";
+    let html = text;
+    if (imageBase64) {
+        html += `<br><img src="data:image/jpeg;base64,${imageBase64}" class="image-preview mt-3">`;
+    }
+    div.innerHTML = html;
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+}
+
+function addMessage(text, sender) {
+    const container = document.getElementById("chat-messages");
+    const div = document.createElement("div");
+    div.className = `message ${sender}`;
+    div.innerHTML = text.replace(/\n/g, "<br>");
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+}
+
+function addTyping() {
+    const id = "typing-" + Date.now();
+    const container = document.getElementById("chat-messages");
+    const div = document.createElement("div");
+    div.id = id;
+    div.className = "ai flex items-center gap-2";
+    div.innerHTML = `Supriya सोच रही है <span class="animate-pulse">•••</span>`;
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+    return id;
+}
+
+function removeTyping(id) {
+    const el = document.getElementById(id);
+    if (el) el.remove();
+}
+
+// Auto welcome
+setTimeout(() => {
+    if (document.getElementById("chat-messages").children.length === 0) {
+        addMessage("नमस्ते Suraj! 🔥<br>Photo upload करके test करो या कुछ भी पूछो! YouTube & Instagram भी फॉलो करो भाई ❤️", "ai");
+    }
+}, 800);
+</script>
+
 </body>
 </html>
-
-<script type="module">
-  // Firebase SDK को इम्पोर्ट करें
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-  import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-  // आपका कॉन्फ़िगरेशन (जो आपने पहले दिया था)
-  const firebaseConfig = {
-    apiKey: "AIzaSyBLCn13U8ZnZ28tdZFeLpesSD6Yh0TscX4",
-    authDomain: "supriya-digital.firebaseapp.com",
-    projectId: "supriya-digital",
-    storageBucket: "supriya-digital.firebasestorage.app",
-    messagingSenderId: "574726513811",
-    appId: "1:574726513811:web:8d08198ef9fc2f02ce9966",
-    measurementId: "G-SBTLS3Q8K6"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-
-  // --- 1. ऑर्डर फॉर्म सबमिट करने का लॉजिक ---
-  const orderForm = document.getElementById('applicationForm');
-  const formMessage = document.getElementById('formMessage');
-
-  orderForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = {
-      name: orderForm.name.value,
-      email: orderForm.email.value,
-      phone: orderForm.phone.value,
-      service: orderForm.service.value,
-      details: orderForm.details.value,
-      status: 'Pending',
-      timestamp: new Date()
-    };
-
-    try {
-      await addDoc(collection(db, "orders"), formData);
-      formMessage.innerHTML = "<span style='color:green;'>आपका ऑर्डर सफल रहा! हम जल्द संपर्क करेंगे।</span>";
-      orderForm.reset();
-    } catch (error) {
-      formMessage.innerHTML = "<span style='color:red;'>गलती हुई: " + error.message + "</span>";
-    }
-  });
-
-  // --- 2. एडमिन लॉगिन लॉजिक ---
-  const adminLink = document.getElementById('admin-link');
-  const loginModal = document.getElementById('loginModal');
-  const googleLoginBtn = document.getElementById('googleLoginBtn');
-
-  adminLink.onclick = () => loginModal.style.display = 'flex';
-
-  googleLoginBtn.onclick = async () => {
-    try {
-      await signInWithPopup(auth, provider);
-      loginModal.style.display = 'none';
-    } catch (error) {
-      alert("लॉगिन फेल: " + error.message);
-    }
-  };
-
-  // --- 3. डेटा दिखाना (केवल लॉगिन के बाद) ---
-  onAuthStateChanged(auth, (user) => {
-    const adminPanel = document.getElementById('adminPanel');
-    if (user && user.email === "suraj359010@gmail.com") { // आपकी ईमेल आईडी
-      adminPanel.style.display = 'block';
-      loadOrders();
-    } else {
-      adminPanel.style.display = 'none';
-    }
-  });
-
-  async function loadOrders() {
-    const appsList = document.getElementById('appsList');
-    const q = query(collection(db, "orders"), orderBy("timestamp", "desc"));
-    const querySnapshot = await getDocs(q);
-    
-    appsList.innerHTML = '';
-    querySnapshot.forEach((docSnap) => {
-      const data = docSnap.data();
-      const card = document.createElement('div');
-      card.className = `app-card ${data.status === 'Completed' ? 'completed' : ''}`;
-      card.innerHTML = `
-        <h3>${data.service}</h3>
-        <p><span class="label">नाम:</span> ${data.name}</p>
-        <p><span class="label">फोन:</span> ${data.phone}</p>
-        <p><span class="label">विवरण:</span> ${data.details}</p>
-        <p><span class="label">स्थिति:</span> ${data.status}</p>
-      `;
-      appsList.appendChild(card);
-    });
-  }
-
-  document.getElementById('logoutBtn').onclick = () => signOut(auth);
-          </script>
-          
