@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Supriya Digital Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#050510;color:#fff}
+
+.header{position:sticky;top:0;z-index:10;padding:14px;text-align:center;font-size:20px;font-weight:700;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px)}
+
+.stories{display:flex;gap:12px;overflow-x:auto;padding:12px}
+.story{min-width:70px;text-align:center}
+.story img{width:65px;height:65px;border-radius:50%;border:3px solid transparent;background:linear-gradient(#000,#000) padding-box,linear-gradient(45deg,#ff00cc,#3333ff) border-box}
+.story p{font-size:11px;margin-top:5px}
+
+.feed{padding:12px}
+.post{background:#0f0f1f;border-radius:16px;margin-bottom:16px;overflow:hidden;box-shadow:0 0 20px rgba(0,0,0,0.4)}
+.post img{width:100%;height:180px;object-fit:cover}
+.post-content{padding:12px}
+.post h3{font-size:16px}
+.post p{font-size:12px;opacity:.7;margin-top:5px}
+
+.btn{margin-top:10px;padding:10px;border:none;border-radius:25px;background:linear-gradient(45deg,#ff00cc,#3333ff);color:#fff;width:100%;font-weight:600;cursor:pointer}
+.btn:hover{transform:scale(1.05)}
+
+.nav{position:fixed;bottom:0;width:100%;display:flex;justify-content:space-around;background:#0a0a15;padding:10px;border-top:1px solid #222}
+.nav button{background:none;border:none;color:#aaa;font-size:12px}
+.nav button.active{color:#fff}
+
+.section{display:none;padding-bottom:80px}
+.active{display:block}
+
+.form{padding:15px}
+input,textarea{width:100%;margin-top:10px;padding:12px;border-radius:12px;border:none;background:#111;color:#fff}
+
+.success{margin-top:10px;color:#00ff99;font-size:14px}
+
+</style></head><body><div class="header">🚀 Supriya Digital Research</div><div id="home" class="section active">
+<div class="stories">
+<div class="story"><img src="https://picsum.photos/100?1"><p>Logo</p></div>
+<div class="story"><img src="https://picsum.photos/100?2"><p>Thumbnail</p></div>
+<div class="story"><img src="https://picsum.photos/100?3"><p>Poster</p></div>
+<div class="story"><img src="https://picsum.photos/100?4"><p>App UI</p></div>
+</div><div class="feed">
+<div class="post">
+<img src="https://picsum.photos/400/200?1">
+<div class="post-content">
+<h3>🔥 Premium Logo Design</h3>
+<p>Unique branding for your business</p>
+<button class="btn" onclick="show('order')">Order Now</button>
+</div>
+</div><div class="post">
+<img src="https://picsum.photos/400/200?2">
+<div class="post-content">
+<h3>📺 YouTube Thumbnail</h3>
+<p>High CTR thumbnails for viral videos</p>
+<button class="btn" onclick="show('order')">Order Now</button>
+</div>
+</div>
+</div>
+</div><div id="order" class="section">
+<div class="form">
+<h2>📝 Place Order</h2>
+<form onsubmit="send(event)">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="text" id="phone" placeholder="Phone Number" required>
+<input type="email" id="email" placeholder="Your Email" required>
+<textarea id="work" placeholder="Describe your work" required></textarea>
+<button class="btn">Submit Order</button>
+</form>
+<div id="successMsg" class="success"></div>
+</div>
+</div><div id="admin" class="section">
+<div class="form">
+<h2>🔐 Admin Panel</h2>
+<input type="password" id="pass" placeholder="Enter Password">
+<button class="btn" onclick="login()">Login</button>
+<div id="panel" style="margin-top:10px"></div>
+</div>
+</div><div class="nav">
+<button onclick="show('home')" id="btnHome">🏠</button>
+<button onclick="show('order')" id="btnOrder">➕</button>
+<button onclick="show('admin')" id="btnAdmin">📊</button>
+</div><script>
+function show(id){
+ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+ if(id==='home') btnHome.classList.add('active');
+ if(id==='order') btnOrder.classList.add('active');
+ if(id==='admin') btnAdmin.classList.add('active');
+}
+
+function send(e){
+ e.preventDefault();
+ let n=name.value,p=phone.value,w=work.value,eid=email.value;
+ let msg=`Name:${n}%0APhone:${p}%0AEmail:${eid}%0AWork:${w}`;
+ window.open(`https://wa.me/919792006815?text=${msg}`);
+ successMsg.innerText='✅ Order Sent Successfully!';
+}
+
+function login(){
+ if(pass.value==='1234') panel.innerHTML='✅ Logged In Successfully';
+ else alert('Wrong Password');
+}
+</script></body>
+</html>
